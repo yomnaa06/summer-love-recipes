@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Discover heartfelt recipes filled with love, created by me and my mom during our summer holidays!" />
+    <title>Summer Love Recipes</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #f5e7ea, #fff0f3);
+        font-family: 'Playfair Display', serif;
+        color: #4a3c3c;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        line-height: 1.6;
+        overflow-x: hidden;
+        position: relative;
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;500&display=swap');
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://www.transparenttextures.com/patterns/rice-paper-2.png'), linear-gradient(135deg, rgba(255, 204, 213, 0.1), rgba(255, 240, 243, 0.1));
+        z-index: -1;
+        opacity: 0.5;
+      }
+      header, main, footer {
+        background: rgba(255, 245, 245, 0.9);
+        border-radius: 20px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        border: 2px solid #ffccd5;
+        backdrop-filter: blur(5px);
+        transition: transform 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      header::before, .recipe-section::before {
+        content: '✿';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 1.5em;
+        color: #ff99a8;
+        opacity: 0.7;
+        animation: float 6s infinite;
+      }
+      header::after, .recipe-section::after {
+        content: '❧';
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 1.5em;
+        color: #ff99a8;
+        opacity: 0.7;
+        animation: float 7s infinite;
+      }
+      header:hover, .recipe-section:hover {
+        transform: scale(1.02);
+      }
+      h1 {
+        color: #8b5e5e;
+        font-size: 3em;
+        text-decoration: underline wavy #ff99a8;
+        margin-bottom: 15px;
+        font-weight: 700;
+        text-shadow: 1px 1px 3px rgba(255, 153, 168, 0.3);
+      }
+      h2 {
+        color: #7a4f4f;
+        font-size: 2.2em;
+        margin-top: 25px;
+        font-weight: 400;
+        position: relative;
+      }
+      h2::after {
+        content: '';
+        width: 50px;
+        height: 2px;
+        background: #ff99a8;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+      }
+      h2:hover::after {
+        width: 70px;
+      }
+      h3 {
+        color: #8b5e5e;
+        font-size: 1.8em;
+        margin-top: 20px;
+        font-weight: 500;
+      }
+      ul, ol {
+        list-style-position: inside;
+        text-align: left;
+        display: inline-block;
+        padding-left: 0;
+        max-width: 600px;
+      }
+      li {
+        margin: 12px 0;
+        padding-left: 10px;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+      li::before {
+        content: '〜';
+        position: absolute;
+        left: -15px;
+        color: #ff99a8;
+        opacity: 0.6;
+      }
+      li:hover {
+        color: #ff6b6b;
+      }
+      a {
+        color: #ff6b6b;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
+      a:hover {
+        color: #ff4040;
+        text-decoration: underline wavy #ff99a8;
+      }
+      img {
+        border-radius: 15px;
+        max-width: 100%;
+        height: auto;
+        margin: 20px 0;
+        border: 3px solid #ffccd5;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+      }
+      img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+      img::before {
+        content: '✿';
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        font-size: 1.2em;
+        color: #ff99a8;
+        opacity: 0.8;
+      }
+      img::after {
+        content: '❧';
+        position: absolute;
+        bottom: -10px;
+        right: 10px;
+        font-size: 1.2em;
+        color: #ff99a8;
+        opacity: 0.8;
+      }
+      nav {
+        margin: 20px 0;
+      }
+      nav a {
+        margin: 0 15px;
+        padding: 10px 18px;
+        background: #ffccd5;
+        border-radius: 15px;
+        color: #7a4f4f;
+        text-decoration: none;
+        font-family: 'Lora', serif;
+        font-weight: 500;
+        transition: background 0.3s ease, color 0.3s ease;
+      }
+      nav a:hover {
+        background: #ffb3c1;
+        color: #4a3c3c;
+      }
+      footer {
+        font-size: 1em;
+        color: #7a4f4f;
+        padding: 20px;
+        font-family: 'Lora', serif;
+        border-top: 1px dashed #ffccd5;
+      }
+      .recipe-section {
+        background: rgba(255, 245, 245, 0.8);
+        border-radius: 20px;
+        padding: 25px;
+        margin: 25px 0;
+        border: 2px dashed #ffccd5;
+        animation: fadeIn 1s ease-in;
+        position: relative;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Summer Love Recipes ✿❧</h1>
+      <p>Heartfelt recipes baked with tenderness by me and Mom this summer! ❥🌸</p>
+      <nav>
+        <a href="#brookies">Brookies</a>
+        <a href="#pancakes">Pancakes</a>
+        <a href="#cupcakes">Cupcakes</a>
+        <a href="#tiramisu">Tiramisu</a>
+        <a href="#churros">Heart Churros</a>
+        <a href="#cinnamon">Cinnamon Rolls</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="brookies" class="recipe-section">
+        <h2>Brookies ✿</h2>
+        <p>A sweet, loving blend of brownies and cookies, crafted with care this summer! 🍫❥</p>
+        <h3>Ingredients</h3>
+        <ul>
+          <li>1/2 cup (115g) unsalted butter, melted</li>
+          <li>1 cup (200g) granulated sugar</li>
+          <li>2 large eggs</li>
+          <li>1/2 cup (65g) all-purpose flour</li>
+          <li>1/4 tsp salt</li>
+          <li>1/4 tsp baking powder</li>
+          <li>1 tsp vanilla extract</li>
+          <li>1/2 cup (90g) chocolate chips</li>
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+          <li>Preheat your oven to 175°C (350°F) with a warm heart.</li>
+          <li>Gently mix melted butter and sugar, then add eggs and vanilla with love.</li>
+          <li>Fold in flour, salt, baking powder, and chocolate chips for the brownie base.</li>
+          <li>Spread in a pan, layer with cookie dough, and bake for 30-35 minutes.</li>
+          <li>Cool with tenderness and cut into sweet, loving squares.</li>
+        </ol>
+        <img src="https://via.placeholder.com/400x300" alt="A cozy brookie with brownie and cookie layers" />
+      </section>
+
+      <section id="pancakes" class="recipe-section">
+        <h2>Pancakes ✿</h2>
+        <p>Fluffy pancakes we made to start our summer mornings with a smile! 🥞🌸</p>
+        <h3>Ingredients</h3>
+        <ul>
+          <li>1 cup (125g) all-purpose flour</li>
+          <li>2 tbsp sugar</li>
+          <li>2 tsp baking powder</li>
+          <li>1/4 tsp salt</li>
+          <li>1 cup (240ml) milk</li>
+          <li>1 large egg</li>
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+          <li>Mix flour, sugar, baking powder, and salt with a gentle touch.</li>
+          <li>Whisk milk and egg, then blend into dry ingredients with care.</li>
+          <li>Heat a skillet with love and pour batter into small, happy circles.</li>
+          <li>Cook until bubbly, flip, and golden, about 2-3 minutes per side.</li>
+          <li>Serve warm with syrup or fresh berries as a sweet hug.</li>
+        </ol>
+        <img src="https://via.placeholder.com/400x300" alt="A stack of fluffy pancakes with love" />
+      </section>
+
+      <section id="cupcakes" class="recipe-section">
+        <h2>Cupcakes ✿</h2>
+        <p>Colorful cupcakes we baked to sprinkle joy this summer! 🎂🌸</p>
+        <h3>Ingredients</h3>
+        <ul>
+          <li>1 1/2 cups (190g) all-purpose flour</li>
+          <li>1 cup (200g) sugar</li>
+          <li>1/2 cup (115g) butter, softened</li>
+          <li>2 large eggs</li>
+          <li>1/2 cup (120ml) milk</li>
+          <li>1 tsp vanilla extract</li>
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+          <li>Preheat oven to 180°C (350°F) and line a muffin tin with love.</li>
+          <li>Cream butter and sugar, then add eggs one at a time with a smile.</li>
+          <li>Mix in flour and milk alternately, adding vanilla with tenderness.</li>
+          <li>Fill liners and bake for 18-20 minutes until fluffy and golden.</li>
+          <li>Cool and decorate with a sweet, creamy frosting hug.</li>
+        </ol>
+        <img src="https://via.placeholder.com/400x300" alt="Colorful cupcakes with creamy frosting" />
+      </section>
+
+      <section id="tiramisu" class="recipe-section">
+        <h2>Tiramisu ✿</h2>
+        <p>A creamy Italian treat we crafted with love this summer! 🍮❥</p>
+        <h3>Ingredients</h3>
+        <ul>
+          <li>6 egg yolks</li>
+          <li>3/4 cup (150g) sugar</li>
+          <li>1 cup (240ml) mascarpone cheese</li>
+          <li>1 1/2 cups (360ml) strong coffee, cooled</li>
+          <li>2 tbsp coffee liqueur (optional)</li>
+          <li>24 ladyfingers</li>
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+          <li>Whisk egg yolks and sugar over a double boiler until thick with care.</li>
+          <li>Fold in mascarpone cheese until smooth and loving.</li>
+          <li>Dip ladyfingers in coffee mixture and layer in a dish with tenderness.</li>
+          <li>Spread mascarpone mixture, repeat layers, and chill for 4 hours.</li>
+          <li>Dust with cocoa powder for a sweet, tender finish.</li>
+        </ol>
+        <img src="https://via.placeholder.com/400x300" alt="A layered tiramisu with cocoa love" />
+      </section>
+
+      <section id="churros" class="recipe-section">
+        <h2>Heart-Shaped Churros ✿</h2>
+        <p>Crispy hearts of joy we shaped with love this summer! 💕🍴</p>
+        <h3>Ingredients</h3>
+        <ul>
+          <li>1 cup (240ml) water</li>
+          <li>1/2 cup (115g) butter</li>
+          <li>1 cup (125g) all-purpose flour</li>
+          <li>3 large eggs</li>
+          <li>1/4 tsp salt</li>
+          <li>Vegetable oil for frying</li>
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+          <li>Boil water, butter, and salt, then add flour to form a dough with care.</li>
+          <li>Beat in eggs one at a time until smooth and loving.</li>
+          <li>Pipe into heart shapes and fry in hot oil until golden with a smile.</li>
+          <li>Drain and roll in cinnamon sugar with tenderness.</li>
+          <li>Serve warm with a chocolate dip hug.</li>
+        </ol>
+        <img src="https://via.placeholder.com/400x300" alt="Heart-shaped churros with cinnamon love" />
+      </section>
+
+      <section id="cinnamon" class="recipe-section">
+        <h2>Cinnamon Rolls ✿</h2>
+        <p>Soft rolls of warmth we baked to fill our summer with love! 🍞❥</p>
+        <h3>Ingredients</h3>
+        <ul>
+          <li>2 1/4 tsp active dry yeast</li>
+          <li>1 cup (240ml) warm milk</li>
+          <li>1/4 cup (50g) sugar</li>
+          <li>3 cups (375g) all-purpose flour</li>
+          <li>1/4 cup (60g) butter, melted</li>
+          <li>1 tbsp cinnamon</li>
+        </ul>
+        <h3>Instructions</h3>
+        <ol>
+          <li>Dissolve yeast in warm milk with a pinch of sugar, let sit with love.</li>
+          <li>Mix flour, sugar, and melted butter, then knead into a tender dough.</li>
+          <li>Roll out, spread with cinnamon sugar, and roll into a log with care.</li>
+          <li>Cut into rolls, let rise for 1 hour, and bake at 180°C (350°F) for 20-25 minutes.</li>
+          <li>Glaze with a sweet hug and serve warm with affection.</li>
+        </ol>
+        <img src="https://via.placeholder.com/400x300" alt="Fresh cinnamon rolls with a loving glaze" />
+      </section>
+    </main>
+
+    <footer>
+      <p>Created with all my heart by Mina & Mom | Summer 2025 ©</p>
+      <p>Share the love! <a href="mailto:ydhouib06@gmail.com">Email Us</a> ❧</p>
+    </footer>
+  </body>
+</html>
