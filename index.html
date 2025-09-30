@@ -133,36 +133,38 @@
       }
       img {
         border-radius: 15px;
-        max-width: 100%;
-        height: auto;
-        margin: 20px 0;
-        border: 3px solid #ffccd5;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        max-width: 300px; /* Smaller width for aesthetic fit */
+        max-height: 225px; /* Proportional height */
+        height: auto; /* Maintains aspect ratio */
+        margin: 15px auto; /* Centers and adds space above/below */
+        border: 3px solid #ffccd5; /* Soft pink border */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow for elegance */
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
-      }
-      img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      }
-      img::before {
+        display: block; /* Ensures proper centering */
+        }
+    img:hover {
+        transform: scale(1.03); /* Gentle hover scale */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    img::before {
         content: '✿';
         position: absolute;
-        top: -10px;
+        top: -8px;
         left: 10px;
-        font-size: 1.2em;
+        font-size: 1.1em;
         color: #ff99a8;
         opacity: 0.8;
-      }
-      img::after {
+        }
+    img::after {
         content: '❧';
-        position: absolute;
-        bottom: -10px;
+         position: absolute;
+        bottom: -8px;
         right: 10px;
-        font-size: 1.2em;
+        font-size: 1.1em;
         color: #ff99a8;
         opacity: 0.8;
-      }
+        }
       nav {
         margin: 20px 0;
       }
@@ -189,14 +191,15 @@
         border-top: 1px dashed #ffccd5;
       }
       .recipe-section {
+        max-width: 500px;
+        margin: 25px auto; /* Centers the section */
         background: rgba(255, 245, 245, 0.8);
         border-radius: 20px;
         padding: 25px;
-        margin: 25px 0;
         border: 2px dashed #ffccd5;
         animation: fadeIn 1s ease-in;
         position: relative;
-      }
+        }
       @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
