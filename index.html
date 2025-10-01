@@ -133,21 +133,21 @@
       }
       img {
         border-radius: 15px;
-        max-width: 300px; /* Smaller width for aesthetic fit */
-        max-height: 225px; /* Proportional height */
-        height: auto; /* Maintains aspect ratio */
-        margin: 15px auto; /* Centers and adds space above/below */
-        border: 3px solid #ffccd5; /* Soft pink border */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow for elegance */
+        max-width: 300px;
+        max-height: 225px;
+        height: auto;
+        margin: 10px auto 25px; /* Increased bottom margin for caption space */
+        border: 3px solid #ffccd5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         position: relative;
-        display: block; /* Ensures proper centering */
-        }
-    img:hover {
-        transform: scale(1.03); /* Gentle hover scale */
+        display: block;
+      }
+      img:hover {
+        transform: scale(1.03);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
-    img::before {
+      }
+      img::before {
         content: '✿';
         position: absolute;
         top: -8px;
@@ -155,16 +155,16 @@
         font-size: 1.1em;
         color: #ff99a8;
         opacity: 0.8;
-        }
-    img::after {
+      }
+      img::after {
         content: '❧';
-         position: absolute;
+        position: absolute;
         bottom: -8px;
         right: 10px;
         font-size: 1.1em;
         color: #ff99a8;
         opacity: 0.8;
-        }
+      }
       nav {
         margin: 20px 0;
       }
@@ -192,14 +192,21 @@
       }
       .recipe-section {
         max-width: 500px;
-        margin: 25px auto; /* Centers the section */
+        margin: 25px auto;
         background: rgba(255, 245, 245, 0.8);
         border-radius: 20px;
         padding: 25px;
         border: 2px dashed #ffccd5;
         animation: fadeIn 1s ease-in;
         position: relative;
-        }
+      }
+      .recipe-caption {
+        font-style: italic;
+        color: #7a4f4f;
+        margin-top: 5px;
+        font-size: 1em;
+        text-align: center;
+      }
       @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
@@ -249,6 +256,7 @@
           <li>Cool with tenderness and cut into sweet, loving squares.</li>
         </ol>
         <img src="brookies.jpeg" alt="A tasty brookie with brownie and cookie layers" />
+        <p class="recipe-caption">A tasty brookie with brownie and cookie layers</p>
       </section>
 
       <section id="pancakes" class="recipe-section">
@@ -272,6 +280,7 @@
           <li>Serve warm with syrup or fresh berries as a sweet hug.</li>
         </ol>
         <img src="pancakes.jpeg" alt="A stack of fluffy pancakes with love" />
+        <p class="recipe-caption">A stack of fluffy pancakes with love</p>
       </section>
 
       <section id="cupcakes" class="recipe-section">
@@ -295,6 +304,7 @@
           <li>Cool and decorate with a sweet, creamy frosting hug.</li>
         </ol>
         <img src="cupcakes.jpeg" alt="Colorful cupcakes with creamy frosting" />
+        <p class="recipe-caption">Colorful cupcakes with creamy frosting</p>
       </section>
 
       <section id="tiramisu" class="recipe-section">
@@ -318,6 +328,7 @@
           <li>Dust with cocoa powder for a sweet, tender finish.</li>
         </ol>
         <img src="tiramisu.jpeg" alt="A layered tiramisu with cocoa love by noussa" />
+        <p class="recipe-caption">A layered tiramisu with cocoa love by noussa</p>
       </section>
 
       <section id="churros" class="recipe-section">
@@ -341,6 +352,7 @@
           <li>Serve warm with a chocolate dip hug.</li>
         </ol>
         <img src="heart shaped churros.jpeg" alt="Heart-shaped churros with mimia's love" />
+        <p class="recipe-caption">Heart-shaped churros with mimia's love</p>
       </section>
 
       <section id="cinnamon" class="recipe-section">
@@ -364,6 +376,7 @@
           <li>Glaze with a sweet hug and serve warm with affection.</li>
         </ol>
         <img src="cinnamon rolls.jpeg" alt="Fresh cinnamon rolls with a loving glaze" />
+        <p class="recipe-caption">Fresh cinnamon rolls with a loving glaze</p>
       </section>
     </main>
 
